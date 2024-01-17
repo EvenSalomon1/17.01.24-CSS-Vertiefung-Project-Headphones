@@ -1,0 +1,292 @@
+/* !Basics */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: WorkSans;
+  src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Lucida;
+  src: url(../fonts/LucidaGrande.ttf);
+}
+
+html {
+  font-family: WorkSans;
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 4.6rem;
+  color: #ebccc2;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 400;
+  color: #ebccc2;
+}
+
+h4 {
+  font-size: 1.9rem;
+  color: #ebccc2;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+/* !nav bar oben und links */
+/* - Universal Selectors */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* - At-rules */
+
+/* * Fonts */
+
+@font-face {
+  font-family: "LucidaGrande";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 0% 200%;
+  src: url("/assets/fonts/LucidaGrande.ttf") format("truetype");
+}
+@font-face {
+  font-family: "WorkSans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 0% 200%;
+  src: url("/assets/fonts/WorkSans.ttf") format("truetype");
+}
+
+/* * MediaQueries */
+
+/* - Global Variables & Rules */
+
+:root {
+  /* * Variables */
+
+  --global--background--Color: #2e2e2e;
+  --global--border--Color: #fff;
+  --global--heading--Color: #ebccc2;
+  --global--text--Color: #737373;
+  --global--link--Color: #867772;
+  --global--link--active--Color: #fff;
+
+  /* * Rules */
+
+  font-size: 62.5%;
+
+  font-family: WorkSans;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: unset;
+    cursor: pointer;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+/* - IDs */
+
+#current-page {
+  color: var(--global--link--active--Color);
+}
+
+/* - Classes */
+
+/* * navigation */
+
+.social {
+  display: flex;
+  gap: clamp(1.65rem, 2.65rem, 3.65rem);
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: var(--global--link--active--Color);
+      transition: 1.5s;
+    }
+    &:nth-of-type(2) {
+      padding-left: 2.7rem;
+    }
+  }
+}
+
+.nav-border {
+  margin: 1.5rem;
+  border-left: 0.6px solid var(--global--text--Color);
+  height: 4.8rem;
+}
+
+.nav-points {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  font-family: LucidaGrande;
+  a {
+    font-size: 1.6rem;
+    &:hover {
+      color: var(--global--link--active--Color);
+      transition: 1.5s;
+    }
+  }
+  p {
+    font-size: 3.2rem;
+  }
+}
+
+/* - Type Selectors */
+
+html {
+  background-color: var(--global--background--Color);
+  color: var(--global--text--Color);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 5rem 15rem;
+    color: var(--global--link--Color);
+    font-size: clamp(0.6rem, 1.6rem, 2.6rem);
+    position: sticky;
+    top: 0px;
+  }
+
+  main {
+    aside {
+      position: relative;
+      margin: 3rem;
+      position: fixed;
+
+      svg {
+        position: absolute;
+        top: -7px;
+        left: -1px;
+      }
+
+      nav {
+        text-transform: uppercase;
+      }
+    }
+
+    /* !index.html bzw. about.html */
+
+    article {
+      width: 20vw;
+      margin-left: 35vw;
+    }
+
+    .backgroundindex {
+      background: url(../images/backgroundindex.jpg) no-repeat center;
+      height: 142.2rem;
+      margin: 0 6.2rem;
+    }
+
+    .indexbottom {
+      display: flex;
+      align-items: center;
+      gap: 4vw;
+      margin: 5vh 20vw;
+    }
+
+    .indexbottom img,
+    .indexbottom div {
+      width: 50%;
+    }
+
+    .indexbottom p {
+      margin-top: 2vh;
+    }
+  }
+}
+
+/* !inspiration.html */
+
+.inspiration {
+  main {
+    svg {
+      position: absolute;
+      top: 298px;
+      left: -1px;
+    }
+
+    video {
+      padding: 0 10vw 0 20vw;
+      width: 100%;
+      margin-bottom: 2.8rem;
+    }
+  }
+}
+
+.videotext {
+  margin-left: 20vw;
+}
+
+.videotext p:first-of-type {
+  color: #ebccc2;
+  margin-bottom: 1.4rem;
+}
+
+.videotext h2 {
+  margin-bottom: 2.8rem;
+}
+
+.videotext a {
+  border-radius: 4px;
+  border: 1px solid #fff;
+  padding: 1rem 2rem;
+}
+
+.videotext p:nth-of-type(2) {
+  margin-top: 2.5rem;
+  margin-bottom: 11rem;
+}
+
+.grid {
+  margin: 0 20vw 5vh 20vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid div {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+}
